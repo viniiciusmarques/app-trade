@@ -15,22 +15,40 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 @import url('https://fonts.googleapis.com/css?family=Montez');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
 $tradeColor: #722DB2;
 $tradeLigth: #CE90E6;
 
-ion-title {
-  font-family: 'Montez', cursive;
-}
+.toolbar {
+  .toolbar-title-md {
+    font-size: 3rem;
+    color: $tradeColor;
+  }
 
-.toolbar-title-md {
-  font-size: 3rem;
-  color: $tradeColor;
-}
+  ion-icon[name="menu"] {
+    color: #000;
+    font-size: 34px;
+  }
 
-ion-icon[name="menu"]{
-  color: $tradeColor;
-}
+  .title {
+    font-family: 'Raleway', sans-serif;
 
-.back-button {
-  color: $tradeColor;
+    .toolbar-title {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      @media screen and (max-width: 340px) {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .back-button {
+    padding: 0 20px 0 10px;
+    color: $tradeColor;
+    .back-button-text {
+      font-size: 0;
+    }
+  }
 }
