@@ -9,21 +9,21 @@
       <ion-list>
         <ion-row>
           <ion-col>
-              <ion-item>
-                <ion-input [formControl]="loginForm.controls['username']" type="text" placeholder="Usuário"></ion-input>
-              </ion-item>
-              <div *ngIf="!loginForm.controls.username.valid &&
+            <ion-item>
+              <ion-input [formControl]="loginForm.controls['username']" type="text" placeholder="Usuário"></ion-input>
+            </ion-item>
+            <div *ngIf="!loginForm.controls.username.valid &&
                 loginForm.controls.username.dirty" class="validator-error">
-                Usuário obrigatório!
-              </div>
+              Usuário obrigatório!
+            </div>
           </ion-col>
         </ion-row>
         <ion-row>
           <ion-col>
             <ion-item>
-                <button ion-button clear item-end (click)='showPassword()'>
-                  <ion-icon [name]="iconType" style="font-size:30px;" color="purple"></ion-icon>
-                </button>
+              <button ion-button clear item-end (click)='showPassword()'>
+                <ion-icon [name]="iconType" style="font-size:30px;" color="purple"></ion-icon>
+              </button>
               <ion-input [formControl]="loginForm.controls['password']" [type]="passwordType" placeholder="Senha"></ion-input>
             </ion-item>
             <div *ngIf="!loginForm.controls.password.valid &&
@@ -39,8 +39,9 @@
         </ion-row>
         <ion-row>
           <ion-col>
-            <button ion-button full color="purple" (click)="loginFacebook()">
+            <button ion-button full class="facebook" color="purple" (click)="loginFacebook()">
               <ion-icon name="logo-facebook" style="font-size: 35px"></ion-icon>
+              Entrar com Facebook
             </button>
           </ion-col>
         </ion-row>
@@ -53,7 +54,8 @@
     <ion-grid text-center>
       <ion-row>
         <ion-col>
-          <div style="text-decoration: none; color: black" (click)="register()">Criar nova conta</div>
+          <div class="forgot-password">Esqueceu a senha?</div>
+          <div class="new-account" (click)="register()">Criar nova conta</div>
         </ion-col>
       </ion-row>
     </ion-grid>

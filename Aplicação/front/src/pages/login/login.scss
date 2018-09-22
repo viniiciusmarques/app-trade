@@ -1,14 +1,6 @@
 page-login {
   ion-content {
-    background-image: url('../assets/imgs/background.jpg');
-  }
-
-  ion-img {
-    width: 200px;
-    height: 200px;
-    background-color: transparent;
-    margin-top: 10%;
-    transform: rotate(-15deg);
+    background-image: url('../assets/imgs/background.jpeg');
   }
 
   ion-item {
@@ -16,12 +8,72 @@ page-login {
     opacity: 0.7;
   }
 
+  .img-loaded {
+    width: 200px;
+    height: 200px;
+    background-color: transparent;
+    margin-top: 10%;
+    transform: rotate(-15deg);
+
+    img {
+      display: inline-block;
+    }
+  }
+
   .validator-error {
     color: red;
   }
 
-  button {
-    border-radius: 26px !important;
+  .button-default {
+    border-radius: 26px;
     background-color: rgba(155, 81, 224, 0.9);
+
+    &.facebook {
+      .ion-logo-facebook {
+        width: 22px;
+        height: 22px;
+        margin-right: 20px;
+        background: url('../../assets/icon/login/ico-facebook.svg') center no-repeat;
+        background-size: 100%;
+        font-size: 0 !important;
+      }
+    }
+  }
+
+  .ion-ios-eye-outline {
+    display: block;
+    width: 20px;
+    height: 100%;
+    background: url('../../assets/icon/login/view-password.svg') center no-repeat;
+    background-size: 100%;
+    filter: grayscale(100%);
+
+    &:before {
+      display: none;
+    }
+  }
+
+  .ion-ios-eye-off-outline {
+    display: block;
+    width: 20px;
+    height: 100%;
+    background: url('../../assets/icon/login/view-password.svg') center no-repeat;
+    background-size: 100%;
+
+    &:before {
+      display: none;
+    }
+  }
+
+  .forgot-password,
+  .new-account {
+    color: #FFF;
+    letter-spacing: 1px;
+    font-weight: 300;
+    font-size: 16px;
+  }
+
+  .forgot-password {
+    margin-bottom: 10px;
   }
 }
