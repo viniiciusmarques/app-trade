@@ -21,8 +21,8 @@
         <ion-row>
           <ion-col>
             <ion-item>
-              <button ion-button clear item-end (click)='showPassword()'>
-                <ion-icon [name]="iconType" style="font-size:30px;" color="purple"></ion-icon>
+              <button ion-button clear item-end class="icon-eyes" (click)='showPassword()'>
+                <ion-icon [name]="iconType" color="purple"></ion-icon>
               </button>
               <ion-input [formControl]="loginForm.controls['password']" [type]="passwordType" placeholder="Senha"></ion-input>
             </ion-item>

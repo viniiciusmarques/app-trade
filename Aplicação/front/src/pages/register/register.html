@@ -11,7 +11,7 @@
     <form [formGroup]="userForm">
       <ion-list [hidden]="!(formNumber == 1)">
         <ion-row>
-          <ion-col>
+          <ion-col class="title-register first">
             VAMOS CRIAR UMA NOVA CONTA
           </ion-col>
         </ion-row>
@@ -46,8 +46,8 @@
         <ion-row>
           <ion-col>
             <ion-item>
-              <button ion-button clear item-end (click)='showPassword()'>
-                <ion-icon [name]="iconType" style="font-size:30px;" color="purple"></ion-icon>
+              <button ion-button clear item-end class="icon-eyes" (click)='showPassword()'>
+                <ion-icon [name]="iconType" color="purple"></ion-icon>
               </button>
               <ion-input [formControl]="userForm.controls['password']" [type]="passwordType" placeholder="Senha"></ion-input>
             </ion-item>
@@ -63,15 +63,26 @@
             <button [disabled]="((!userForm.valid))" (click)="nextAddress()" ion-button full color="purple">Continuar</button>
           </ion-col>
         </ion-row>
+        <ion-footer>
+          <ion-toolbar>
+            <button (click)="this.navCtrl.push('LoginPage')" ion-button>Já possui uma conta?</button>
+          </ion-toolbar>
+        </ion-footer>
       </ion-list>
     </form>
     <form [formGroup]="addressForm">
       <ion-list [hidden]="!(formNumber == 2)">
         <ion-row>
-          <ion-col>
+          <ion-col class="title-register">
             VAMOS CRIAR UMA NOVA CONTA
           </ion-col>
         </ion-row>
+        <ion-row>
+          <ion-col class="subtitle-register">
+            Seu endereço ajuda a aperfeiçoar sua experiência no aplicativo
+          </ion-col>
+        </ion-row>
+
         <ion-row>
           <ion-col>
             <ion-item>
@@ -120,16 +131,21 @@
             <button [disabled]="!addressForm.valid" (click)="registerComplete()" ion-button full color="purple">Finalizar</button>
           </ion-col>
         </ion-row>
+        <ion-footer>
+          <ion-toolbar>
+            <button (click)="this.navCtrl.push('LoginPage')" ion-button>Já possui uma conta?</button>
+          </ion-toolbar>
+        </ion-footer>
       </ion-list>
     </form>
     <ion-list [hidden]="!(formNumber == 3)">
       <ion-row>
         <ion-col>
-          <ion-icon name="checkmark" style="font-size:200px;" color="purple"></ion-icon>
+          <ion-icon name="checkmark" style="font-size:150px;" color="purple"></ion-icon>
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col>
+        <ion-col class="txt-register-success">
           Cadastro realizado com sucesso!
         </ion-col>
       </ion-row>

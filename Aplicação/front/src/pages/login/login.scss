@@ -25,7 +25,8 @@ page-login {
     color: #9b51e0;
   }
 
-  .button-default {
+  .button-default,
+  .button-default.activated {
     border-radius: 26px;
     background-color: rgba(155, 81, 224, 0.9);
 
@@ -41,28 +42,20 @@ page-login {
     }
   }
 
-  .ion-ios-eye-outline {
-    display: block;
-    width: 20px;
-    height: 100%;
-    background: url('../../assets/icon/login/view-password.svg') center no-repeat;
-    background-size: 100%;
-    filter: grayscale(100%);
+  .icon-eyes {
+    font-size: 0 !important;
 
-    &:before {
-      display: none;
-    }
-  }
+    ion-icon {
+      display: block;
+      width: 20px;
+      height: 100%;
+      background: url('../../assets/icon/login/view-password.svg') center no-repeat;
+      background-size: 100%;
+      filter: grayscale(100%);
 
-  .ion-ios-eye-off-outline {
-    display: block;
-    width: 20px;
-    height: 100%;
-    background: url('../../assets/icon/login/view-password.svg') center no-repeat;
-    background-size: 100%;
-
-    &:before {
-      display: none;
+      &[class*="eye-off"] {
+        filter: grayscale(0);
+      }
     }
   }
 
