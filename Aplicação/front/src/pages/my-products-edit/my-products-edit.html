@@ -1,0 +1,35 @@
+<!--
+  Generated template for the MyProductsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>myProducts</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row text-center>
+      <ion-card *ngFor="let product of products">
+        <img src="http://localhost:8080/storage/images/{{product?.images[0]?.hash_name}}" />
+        <div class="card-title">
+          {{ product.name }}
+        </div>
+        <ion-card-content>
+          <button ion-button color="purple" outline (click)="openDetail(product)">Detalhes</button>
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+  </ion-grid>
+  <ion-fab right bottom class="animated fadeInRight">
+    <button ion-fab mini color="purple" (click)="createProduct()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

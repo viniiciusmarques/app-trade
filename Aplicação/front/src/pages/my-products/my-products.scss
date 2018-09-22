@@ -1,0 +1,16 @@
+page-my-products {
+  ion-fab {
+    left: 25%;
+
+    button[ion-fab] {
+      width: 150px;
+      height: 40px;
+      border-radius: 35px;
+    }
+  }
+
+  .selected {
+    border: 2px solid green;
+    transition: border-width 0.4s cubic-bezier(0.87,-0.1, 0.03, 0.99);
+  }
+}

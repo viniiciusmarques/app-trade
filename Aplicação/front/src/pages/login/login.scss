@@ -1,0 +1,27 @@
+page-login {
+  ion-content {
+    background-image: url('../assets/imgs/background.jpg');
+  }
+
+  ion-img {
+    width: 200px;
+    height: 200px;
+    background-color: transparent;
+    margin-top: 10%;
+    transform: rotate(-15deg);
+  }
+
+  ion-item {
+    border-radius: 26px !important;
+    opacity: 0.7;
+  }
+
+  .validator-error {
+    color: red;
+  }
+
+  button {
+    border-radius: 26px !important;
+    background-color: rgba(155, 81, 224, 0.9);
+  }
+}

@@ -1,0 +1,85 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>infoOffer</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div *ngIf="start == 'me'">
+    <div *ngFor="let product of offer?.products">
+      <ion-card *ngIf="product.which !== 1" class="animated fadeInLeftBig">
+        <img src="http://localhost:8080/storage/images/{{product.offer_product.images[0].hash_name}}" #productImage (click)="zoomImage(productImage)">
+      </ion-card>
+    </div>
+    <p text-center>EM TROCA DE</p>
+    <div class="mini__product">
+      <div *ngFor="let product of offer?.products" class="animated fadeInRightBig product">
+        <ion-card *ngIf="product.which !== 0">
+          <img src="http://localhost:8080/storage/images/{{product.offer_product.images[0].hash_name}}" #productImage (click)="zoomImage(productImage)">
+        </ion-card>
+      </div>
+    </div>
+    <div text-center class="animated fadeInUpBig">
+      <hr>
+      <h5>
+        <ion-icon name="ios-information-circle-outline"></ion-icon> Informações da troca
+      </h5>
+      <hr>
+      <p>Quem começou a negociação </p>
+      <span class="text__aux" *ngIf="offer.start">{{offer?.start.offer_first.username}}</span>
+      <span class="text__aux" *ngIf="!offer.start">{{offer.offer_first.username}}</span>
+      <p>Endereço para realizar a troca</p>
+      <p>Data de inicio</p>
+      <span class="text__aux" *ngIf="offer.start">{{ offer?.start.createdAt | date: 'dd/MM/yyyy H:m:ss' }}</span>
+      <span class="text__aux" *ngIf="!offer.start">{{ offer?.createdAt | date: 'dd/MM/yyyy H:m:ss' }}</span>
+      <hr>
+    </div>
+  </div>
+  <!-- decisoes de aceitar ou contraproposta -->
+  <div *ngIf="start == 'other'">
+    <div *ngFor="let product of offer?.products">
+      <ion-card *ngIf="product.which !== 0" class="animated fadeInLeftBig">
+        <img src="http://localhost:8080/storage/images/{{product.offer_product.images[0].hash_name}}" #productImage (click)="zoomImage(productImage)">
+      </ion-card>
+    </div>
+    <p text-center>EM TROCA DE</p>
+    <div class="mini__product">
+      <div *ngFor="let product of offer?.products" class="animated fadeInRightBig product">
+        <ion-card *ngIf="product.which !== 1">
+          <img src="http://localhost:8080/storage/images/{{product.offer_product.images[0].hash_name}}" #productImage (click)="zoomImage(productImage)">
+        </ion-card>
+      </div>
+    </div>
+    <div text-center class="animated fadeInUpBig">
+      <hr>
+      <h5><ion-icon name="ios-information-circle-outline"></ion-icon> Informações da troca</h5>
+      <hr>
+      <p>Quem começou a negociação </p>
+      <span class="text__aux" *ngIf="offer.start">{{offer?.start.offer_first.username}}</span>
+      <span class="text__aux" *ngIf="!offer.start">{{offer?.offer_first.username}}</span>
+      <p>Endereço para realizar a troca</p>
+      <p>Data de inicio</p>
+      <span class="text__aux" *ngIf="offer.start">{{ offer?.start.createdAt | date: 'dd/MM/yyyy H:m:ss' }}</span>
+      <span class="text__aux" *ngIf="!offer.start">{{ offer?.createdAt | date: 'dd/MM/yyyy H:m:ss' }}</span>
+      <hr>
+    </div>
+    <div [hidden]="offer?.status !== 'AGUARDANDO'">
+      <ion-row>
+        <ion-col>
+          <button full ion-button color="secondary" (click)="sendAlterOffer(offer.id, 'APROVADO')">Aceitar</button>
+        </ion-col>
+        <ion-col>
+          <button full ion-button color="danger" (click)="sendAlterOffer(offer?.id, 'RECUSADO')">Recusar</button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <button full ion-button color="default" (click)="otherOffer(offer)">Outra proposta</button>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+</ion-content>

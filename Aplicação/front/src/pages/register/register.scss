@@ -1,0 +1,36 @@
+page-register {
+
+  .toolbar-content, .toolbar-content-ios {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+  }
+
+  .dot {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+
+    &__select {
+      background-color: rgba(155, 81, 224, 0.9);
+    }
+
+    &__not {
+      background-color: rgba(111, 207, 151, 0.8);
+    }
+  }
+
+  ion-item {
+    border-radius: 26px !important;
+    opacity: 0.7;
+  }
+
+  button {
+    border-radius: 26px !important;
+    background-color: rgba(155, 81, 224, 0.9);
+  }
+
+  ion-content {
+    background-image: url('../assets/imgs/background.jpg');
+  }
+}

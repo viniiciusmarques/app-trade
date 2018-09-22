@@ -1,0 +1,38 @@
+page-create-product {
+  .text {
+    margin-top: 50px;
+    margin-bottom: 40px;
+  }
+
+  .images {
+    margin-bottom: 58px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .square {
+    border: 1px solid $tradeColor;
+    font-family: "Ionicons";
+    border-radius: 10px;
+    width: 100px;
+    margin: 10px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  button {
+    border-radius: 15px !important;
+  }
+
+  .square::before {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 40px;
+    color: $tradeColor;
+    content: '\f102';
+  }
+}

@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>my-products</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row *ngFor="let product of products">
+      <ion-col>
+        <ion-card (click)="selectProduct($event)" id={{product.id}}>
+          <img src="http://localhost:8080/storage/images/{{product.images[0]?.hash_name}}"/>
+          <ion-card-content>
+            {{ product.name }}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-fab bottom class="animated slideInUp">
+    <button [disabled]="selectedProducts.length == 0" ion-fab color="purple" (click)="sendOffer()">Finalizar Oferta</button>
+  </ion-fab>
+</ion-content>

@@ -1,0 +1,61 @@
+<ion-content padding>
+  <ion-grid text-center>
+    <ion-row>
+      <ion-col>
+        <ion-img src="assets/imgs/Logo.svg"></ion-img>
+      </ion-col>
+    </ion-row>
+    <form [formGroup]="loginForm">
+      <ion-list>
+        <ion-row>
+          <ion-col>
+              <ion-item>
+                <ion-input [formControl]="loginForm.controls['username']" type="text" placeholder="Usuário"></ion-input>
+              </ion-item>
+              <div *ngIf="!loginForm.controls.username.valid &&
+                loginForm.controls.username.dirty" class="validator-error">
+                Usuário obrigatório!
+              </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+                <button ion-button clear item-end (click)='showPassword()'>
+                  <ion-icon [name]="iconType" style="font-size:30px;" color="purple"></ion-icon>
+                </button>
+              <ion-input [formControl]="loginForm.controls['password']" [type]="passwordType" placeholder="Senha"></ion-input>
+            </ion-item>
+            <div *ngIf="!loginForm.controls.password.valid &&
+              loginForm.controls.password.dirty" class="validator-error">
+              Senha Obrigatória!
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <button [disabled]="!loginForm.valid" (click)="signIn()" ion-button full color="purple">Entrar</button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <button ion-button full color="purple" (click)="loginFacebook()">
+              <ion-icon name="logo-facebook" style="font-size: 35px"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-list>
+    </form>
+  </ion-grid>
+</ion-content>
+<ion-footer no-border>
+  <ion-toolbar transparent>
+    <ion-grid text-center>
+      <ion-row>
+        <ion-col>
+          <div style="text-decoration: none; color: black" (click)="register()">Criar nova conta</div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

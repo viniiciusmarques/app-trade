@@ -1,0 +1,143 @@
+<ion-header>
+  <ion-navbar>
+    <div [class]="dotClass.step1"></div>
+    <div [class]="dotClass.step2"></div>
+    <div [class]="dotClass.step3"></div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid text-center>
+    <form [formGroup]="userForm">
+      <ion-list [hidden]="!(formNumber == 1)">
+        <ion-row>
+          <ion-col>
+            VAMOS CRIAR UMA NOVA CONTA
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-input [formControl]="userForm.controls['name']" type="text" placeholder="Nome"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-input [formControl]="userForm.controls['lastname']" type="text" placeholder="Sobrenome"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-input [formControl]="userForm.controls['username']" type="text" placeholder="Usuario"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-input [formControl]="userForm.controls['email']" type="email" placeholder="Email"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <button ion-button clear item-end (click)='showPassword()'>
+                <ion-icon [name]="iconType" style="font-size:30px;" color="purple"></ion-icon>
+              </button>
+              <ion-input [formControl]="userForm.controls['password']" [type]="passwordType" placeholder="Senha"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <button ion-button full (click)="takePicture()">Foto de Perfil</button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <button [disabled]="((!userForm.valid))" (click)="nextAddress()" ion-button full color="purple">Continuar</button>
+          </ion-col>
+        </ion-row>
+      </ion-list>
+    </form>
+    <form [formGroup]="addressForm">
+      <ion-list [hidden]="!(formNumber == 2)">
+        <ion-row>
+          <ion-col>
+            VAMOS CRIAR UMA NOVA CONTA
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-input [formControl]="addressForm.controls['cep']" type="number" placeholder="CEP" (change)="getAdress($event.target.value)"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-input [formControl]="addressForm.controls['street']" type="text" placeholder="Endereço"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-input [formControl]="addressForm.controls['number']" type="number" placeholder="Numero"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-input [formControl]="addressForm.controls['district']" type="text" placeholder="Bairro"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-8>
+            <ion-item>
+              <ion-input [formControl]="addressForm.controls['city']" type="text" placeholder="Cidade"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-input [formControl]="addressForm.controls['state']" type="text" placeholder="UF"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <button (click)="registerUser()" ion-button full color="purple">Pular</button>
+          </ion-col>
+          <ion-col>
+            <button [disabled]="!addressForm.valid" (click)="registerComplete()" ion-button full color="purple">Finalizar</button>
+          </ion-col>
+        </ion-row>
+      </ion-list>
+    </form>
+    <ion-list [hidden]="!(formNumber == 3)">
+      <ion-row>
+        <ion-col>
+          <ion-icon name="checkmark" style="font-size:200px;" color="purple"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          Cadastro realizado com sucesso!
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <button (click)="goToLogin()" ion-button full color="purple">Fazer Login</button>
+        </ion-col>
+      </ion-row>
+    </ion-list>
+  </ion-grid>
+</ion-content>

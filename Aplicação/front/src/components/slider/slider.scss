@@ -1,0 +1,14 @@
+slider {
+  .swiper-container {
+    height: auto;
+  }
+
+  ion-slides {
+    height: auto;
+    box-shadow: 0 8px 3px -6px #777;
+  }
+
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background: map-get($colors, purple);
+  }
+}

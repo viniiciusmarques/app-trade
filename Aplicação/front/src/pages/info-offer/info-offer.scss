@@ -1,0 +1,32 @@
+page-info-offer {
+  .mini__product {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    .product {
+      margin-right: 7px;
+      img {
+        height: 110px;
+        width: 120px;
+      }
+    }
+  }
+
+  ion-card {
+    border-radius: 10px !important;
+    img {
+      border-radius: 10px;
+    }
+  }
+
+  button {
+    border-radius: 26px !important;
+  }
+
+  p {
+    margin-bottom: 5px;
+  }
+  .text__aux {
+    color: #777777;
+  }
+}

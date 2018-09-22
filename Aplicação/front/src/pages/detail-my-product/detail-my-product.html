@@ -1,0 +1,24 @@
+<ion-content padding>
+  <ion-list>
+    <ion-item text-wrap>
+      <button ion-button class="back__button" icon-only (click)="navCtrl.pop()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+
+      <slider [images]="product?.images"></slider>
+      <div padding>
+        <h2>{{ product.name }}</h2>
+        <hr>
+        <ion-icon name="pin"></ion-icon>
+        Incididunt laborum consectetur ad dolor.
+        <hr>
+        <p style="color:#969696;">{{ product.description }} </p>
+      </div>
+    </ion-item>
+  </ion-list>
+  <div text-center>
+    <button ion-button round outline color="purple" (click)="delete(product.id)">Deletar</button>
+    <button ion-button round  color="purple" (click)="editProduct(product)">Editar</button>
+  </div>
+
+</ion-content>
