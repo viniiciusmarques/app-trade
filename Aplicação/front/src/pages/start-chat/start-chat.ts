@@ -32,10 +32,9 @@ export class StartChatPage {
       userStart: this.user.id,
       userRecept: this.userProdut.id
     });
-    this.chatProvider.getChat(`${this.user.userName}.${this.userProdut.username}`).subscribe(result => {
-      this.chat = result.data[0];
-      this.messages = result.data[0].messages;
-      console.log(this.chat);
+    this.getRoom().subscribe((response:any) => {
+       this.chat = response.data[0];
+       this.messages = response.data[0].messages;
     });
 
     this.getMessages().subscribe(message => {
@@ -51,6 +50,15 @@ export class StartChatPage {
   getMessages() {
     let observable = new Observable(observer => {
       this.socket.on('message', (data) => {
+        observer.next(data);
+      });
+    })
+    return observable;
+  }
+
+  getRoom() {
+    let observable = new Observable(observer => {
+      this.socket.on('newroom', (data) => {
         observer.next(data);
       });
     })
