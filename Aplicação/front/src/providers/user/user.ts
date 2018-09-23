@@ -8,15 +8,26 @@ import { ConfigsApi } from '../ConfigsApi';
 export class UserProvider {
 
   private url:string = this.configs.url();
+  private httpOptions;
 
   constructor(
     public http: HttpClient,
     private fileTransfer: FileTransfer,
     private configs: ConfigsApi
-  ) {}
+  ) {
+    this.httpOptions = this.configs.getHeaders();
+  }
 
   authenticate(data: any): Observable<any> {
     return this.http.post(`${this.url}users/login`, data);
+  }
+
+  user(): Observable<any> {
+    return this.http.get(`${this.url}users`, this.httpOptions);
+  }
+
+  deactive(): Observable<any> {
+    return this.http.delete(`${this.url}users`, this.httpOptions);
   }
 
   register(data: any, image): Promise<any> {

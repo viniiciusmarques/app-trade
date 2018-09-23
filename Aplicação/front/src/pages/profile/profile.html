@@ -1,0 +1,60 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>profile</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-grid text-center>
+    <ion-avatar item-start>
+      <ion-img src="http://localhost:8080/storage/users/{{user?.image}}"></ion-img>
+    </ion-avatar>
+    <ion-row style="margin-top:20px;">
+      <ion-col>Nome</ion-col>
+      <ion-col>Sobrenome</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="text">{{user?.firstName}}</ion-col>
+      <ion-col class="text">{{user?.lastName}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        Nome de usuario
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="text">
+        {{user?.userName}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <hr>
+  <ion-grid text-center>
+    <ion-row>
+      <ion-col>
+        Endereço
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="text">
+        {{user?.address.cep}}, {{user?.address.city}} - {{user?.address.state}}<br><br>
+        {{user?.address.district}} - {{user?.address.street}} - {{user?.address.number}}
+      </ion-col>
+    </ion-row>
+    <br><br>
+    <ion-row>
+      <ion-col>
+        <button ion-button outline color="danger" (click)="deactive()">Desativar Conta</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

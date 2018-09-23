@@ -12,15 +12,19 @@ export class ConfigsApi{
   }
 
   getHeaders() {
-    let token = JSON.parse(localStorage.getItem('user')).token;
-    let httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
-      })
-    };
+    if (JSON.parse(localStorage.getItem('user'))) {
+      let token = JSON.parse(localStorage.getItem('user')).token;
+      let httpOptions = {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        })
+      };
+      return httpOptions;
+    } else {
+      return null;
+    }
 
-    return httpOptions;
   }
 
 }
