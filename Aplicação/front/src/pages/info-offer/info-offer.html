@@ -32,6 +32,22 @@
       <span class="text__aux" *ngIf="offer.start">{{offer?.start.offer_first.username}}</span>
       <span class="text__aux" *ngIf="!offer.start">{{offer.offer_first.username}}</span>
       <p>Endereço para realizar a troca</p>
+      <span class="text__aux" *ngIf="(offer.start != null) && (offer.status == 'APROVADO')">
+        {{offer?.start.address.city}} - {{offer?.start.address.state}} <br>
+        {{offer?.start.address.district}} - {{offer?.start.address.street}}, nº{{offer?.start.address.number}}
+      </span>
+      <span class="text__aux" *ngIf="(offer.start == null) && (offer.status == 'APROVADO')">
+        {{offer?.offer_first.address.city}} - {{offer?.offer_first.address.state}} <br>
+        {{offer?.offer_first.address.district}} - {{offer?.offer_first.address.street}}, nº{{offer?.offer_first.address.number}}
+      </span>
+      <span class="text__aux" *ngIf="(offer.start) && (offer.status != 'APROVADO')">
+        {{offer?.start.address.city}} - {{offer?.start.address.state}} <br>
+        {{offer?.start.address.district}}
+      </span>
+      <span class="text__aux" *ngIf="(offer.start == null) && (offer.status != 'APROVADO')">
+        {{offer?.offer_first.address.city}} - {{offer?.offer_first.address.state}} <br>
+        {{offer?.offer_first.address.district}}
+      </span>
       <p>Data de inicio</p>
       <span class="text__aux" *ngIf="offer.start">{{ offer?.start.createdAt | date: 'dd/MM/yyyy H:m:ss' }}</span>
       <span class="text__aux" *ngIf="!offer.start">{{ offer?.createdAt | date: 'dd/MM/yyyy H:m:ss' }}</span>
