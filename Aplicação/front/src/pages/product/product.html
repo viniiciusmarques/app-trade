@@ -7,5 +7,9 @@
 
 
 <ion-content padding>
+  <div class="filter">
+      <ion-searchbar [(ngModel)]="searchTerm" placeholder="Buscar" (ionInput)="filterItems()"></ion-searchbar>
+      <button ion-button type="button" (click)="filter()" color="purple">Filtros</button>
+  </div>
   <list-products [products]="products"></list-products>
 </ion-content>
