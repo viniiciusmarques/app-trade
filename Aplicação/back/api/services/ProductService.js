@@ -7,6 +7,7 @@ class ProductService {
     this.wish = models.tb_wishes;
     this.image = models.tb_images;
     this.user = models.tb_users;
+    this.address = models.tb_adresses;
   }
 
   async findAll (user) {
@@ -19,7 +20,13 @@ class ProductService {
           model: this.image,
           as: 'images'
         }, {
-          model: this.user
+          model: this.user,
+          include: [
+            {
+              model: this.address,
+              as: 'address'
+            }
+          ]
         },
         {
           model: this.user,
