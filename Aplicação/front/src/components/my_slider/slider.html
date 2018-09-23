@@ -1,0 +1,5 @@
+<ion-slides class="effect" #slider pager="true">
+  <ion-slide *ngFor="let image of images">
+    <img src="http://localhost:8080/storage/images/{{image?.hash_name}}">
+  </ion-slide>
+</ion-slides>
