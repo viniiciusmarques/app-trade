@@ -4,11 +4,11 @@
           <img src="http://localhost:8080/storage/users/{{product?.tb_user.image}}">
         </ion-avatar>
         <h2>{{product?.tb_user.userName}}</h2>
-        <p *ngIf="product?.tb_user.address">{{ product?.tb_user.address.city }} - {{ product?.tb_user.address.state}} </p>
+        <p *ngIf="product?.tb_user?.address">{{ product?.tb_user.address.city }} - {{ product?.tb_user.address.state}} </p>
       </ion-item>
       <img src="http://localhost:8080/storage/images/{{product?.images[0]?.hash_name}}" />
         <div class="card-title">
-          {{ product.name }}
+          {{ product?.name }}
         </div>
       <ion-card-content>
         {{ product?.description }}
