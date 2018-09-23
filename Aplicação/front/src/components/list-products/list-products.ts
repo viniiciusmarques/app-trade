@@ -17,7 +17,6 @@ export class ListProductsComponent {
   ) {}
 
   openDetail(product) {
-    console.log(this.products)
     this.navCtrl.push('ModalDetailProductPage', { product:product });
   }
 

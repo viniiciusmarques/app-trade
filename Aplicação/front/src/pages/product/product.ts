@@ -9,7 +9,9 @@ import { ProductProvider } from '../../providers/product/product';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+@IonicPage({
+  defaultHistory: ['HomePage']
+})
 @Component({
   selector: 'page-product',
   templateUrl: 'product.html',
