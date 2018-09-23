@@ -19,9 +19,10 @@ class MessageController {
     const response = await this.MessageService.findRoom(user, data);
     return responseHelpers.success(response, 'Room successfully returned');
   }
-
+  
   async createRoom (data) {
-    await this.MessageService.createRoom(data);
+    let response = await this.MessageService.createRoom(data);
+    return responseHelpers.success(response, 'Room successfully returned');
   }
 }
 

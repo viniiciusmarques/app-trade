@@ -4,10 +4,11 @@ module.exports = (io) => {
   const chat = new MessageController(io.app.configs.db.models);
 
   io.on('connection', (socket) => {
-    socket.on('join-room', (connection) => {
+    socket.on('join-room', async (connection) => {
       socket.connection = connection;
-      chat.createRoom(connection);
       socket.join(connection.room);
+      let response = await chat.createRoom(connection);
+      io.in(socket.connection.room).emit('newroom', response);
     });
 
     socket.on('rejoin', (connection) => {

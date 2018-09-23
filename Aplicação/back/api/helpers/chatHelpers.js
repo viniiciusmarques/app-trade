@@ -11,13 +11,13 @@ const organizeResponse = (user, object) => {
       value.send = {
         id: element.chat_last.id,
         name: element.chat_last.userName,
-        image: element.chat_first.image
+        image: element.chat_last.image
       }
     } else {
       value.user = {
         id: element.chat_last.id,
         name: element.chat_last.userName,
-        image: element.chat_first.image
+        image: element.chat_last.image
       }
       value.send = {
         id: element.chat_first.id,

@@ -84,16 +84,18 @@ class MessageService {
       }
     });
 
-    if (chat) return chat;
-    else {
+    let chatResponse;
+    if (chat) {
+      chatResponse = this.findRoom({ id: chat.id_firstUser }, chat.roomName);
+    } else {
       chat = await this.chat.create({
         id_firstUser: data.userStart,
         id_lastUser: data.userRecept,
         roomName: data.room
       });
+      chatResponse = this.findRoom({id: chat.id_firstUser}, chat.roomName);
     }
-
-    return chat;
+    return chatResponse;
   }
 }
 
