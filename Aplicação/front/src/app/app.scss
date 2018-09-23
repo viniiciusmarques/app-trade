@@ -17,7 +17,7 @@
 @import url('https://fonts.googleapis.com/css?family=Montez');
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
-$tradeColor: #722DB2;
+$tradeColor: #8845C6;
 $tradeLigth: #CE90E6;
 
 .toolbar {
@@ -38,6 +38,7 @@ $tradeLigth: #CE90E6;
       font-size: 20px;
       font-weight: 600;
       letter-spacing: 1px;
+
       @media screen and (max-width: 340px) {
         font-size: 14px;
       }
@@ -47,8 +48,28 @@ $tradeLigth: #CE90E6;
   .back-button {
     padding: 0 20px 0 10px;
     color: $tradeColor;
+
     .back-button-text {
       font-size: 0;
+    }
+  }
+}
+
+.menu-inner {
+  .list {
+    .item {
+      padding: 10px 0;
+      border-bottom: 1px solid #CE90E6;
+
+      .item-inner {
+        background: none;
+        border: 0;
+      }
+
+      .label {
+        padding-left: 15px;
+        color: #8845C6;
+      }
     }
   }
 }
