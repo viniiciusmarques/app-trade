@@ -9,6 +9,7 @@ class OfferService {
     this.offeredProduct = models.tb_offeredProducts;
     this.user = models.tb_users;
     this.images = models.tb_images;
+    this.address = models.tb_adresses;
     this.product = models.tb_products;
   }
 
@@ -29,7 +30,11 @@ class OfferService {
       include: [{
         model: this.user,
         as: 'offer_first',
-        attributes: ['username']
+        attributes: ['username'],
+        include: [{
+          model: this.address,
+          as: 'address'
+        }]
       },
       {
         model: this.offers,
@@ -37,7 +42,11 @@ class OfferService {
         include: [{
           model: this.user,
           as: 'offer_first',
-          attributes: ['username']
+          attributes: ['username'],
+          include: [{
+            model: this.address,
+            as: 'address'
+          }]
         }]
       },
       {
