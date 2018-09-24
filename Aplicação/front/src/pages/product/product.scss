@@ -1,3 +1,8 @@
 page-product {
-
+  ion-content {
+    .scroll-content {
+      padding-top: 0 !important;
+      background: #f2f2f2;
+    }
+  }
 }

@@ -41,6 +41,7 @@ export class ModalDetailProductPage {
     if (event.target.children[0].getAttribute('ng-reflect-name') === 'heart-outline') {
       this.productProvider.likeProduct(event.target.children[0].id).subscribe(result => {
         event.target.children[0].classList.add('ion-md-heart');
+        event.target.children[0].classList.add('hover');
         event.target.children[0].classList.remove('ion-md-heart-outline');
         event.target.children[0].setAttribute('ng-reflect-name', 'heart');
         this.toastCtrl.create({
@@ -53,6 +54,7 @@ export class ModalDetailProductPage {
       this.productProvider.deslikeProduct(event.target.children[0].id).subscribe(result => {
         event.target.children[0].classList.add('ion-md-heart-outline');
         event.target.children[0].classList.remove('ion-md-heart');
+        event.target.children[0].classList.remove('hover');
         event.target.children[0].setAttribute('ng-reflect-name', 'heart-outline');
         this.toastCtrl.create({
           message: 'Removido dos favoritos!',

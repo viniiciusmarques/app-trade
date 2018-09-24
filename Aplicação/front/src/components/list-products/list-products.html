@@ -8,14 +8,17 @@
         <h2>Marty McFly</h2>
         <p>November 5, 1955</p>
       </ion-item>
-      <img src="http://localhost:8080/storage/images/{{product?.images[0]?.hash_name}}" />
-        <div class="card-title">
-          {{ product.name }}
-        </div>
+      <div class="img-product">
+        <img src="http://localhost:8080/storage/images/{{product?.images[0]?.hash_name}}" />
+      </div>
+      <div class="card-title">
+        {{ product.name }}
+      </div>
       <ion-card-content>
         <button ion-button color="purple" outline (click)="openDetail(product)">Detalhes</button>
-        <button ion-button color="purple" outline icon-only (click)="likeProduct($event)">
-          <ion-icon id="{{product.id}}" [name]="product.productWished.length > 0 ? 'heart' : 'heart-outline'" (click)="likeProduct($event)"></ion-icon>
+        <button ion-button color="purple" class="whistlist" outline icon-only (click)="likeProduct($event)">
+          <ion-icon id="{{product.id}}" class="icon" [name]="product.productWished.length > 0 ? 'heart' : 'heart-outline'"
+            (click)="likeProduct($event)"></ion-icon>
         </button>
       </ion-card-content>
     </ion-card>
