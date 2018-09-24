@@ -4,5 +4,35 @@ page-product {
       padding-top: 0 !important;
       background: #f2f2f2;
     }
+
+    .filter {
+      .searchbar {
+        background: #FFFFFF;
+
+        .searchbar-search-icon {
+          background: url('../../assets/icon/products/search.svg') center no-repeat;
+          background-size: 100%;
+        }
+
+        ::placeholder,
+        .searchbar-input {
+          padding-left: 20px;
+          color: #575757;
+          font-size: 16px;
+        }
+      }
+
+      .btn-filter {
+        position: fixed;
+        right: -35px;
+        height: 60px;
+        width: 70px;
+        background: url(../../assets/icon/products/filter.svg) 10px no-repeat #8845C6;
+        background-size: 25px;
+        font-size: 0;
+        border-radius: 50%;
+        z-index: 99;
+      }
+    }
   }
 }
