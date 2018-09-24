@@ -1,33 +1,11 @@
 page-modal-detail-product {
-  button.back__button {
-    position: absolute;
-    transition: none 0s ease 0s;
-    z-index: 2;
-    margin: 10px;
-    background: transparent;
-    color: black;
-    box-shadow: none;
+  ion-item {
+    padding-left: 0 !important;
+    border: 0 !important;
   }
 
-  button.like__button {
-    position: absolute;
-    z-index: 2;
-    margin: 12px;
-    background: transparent;
-    margin-left: 85%;
-    box-shadow: none;
-  }
-
-    button.activated {
-      background-color: rgba(248, 248, 248, 0.4) !important;
-    }
-
-  .swiper-slide img{
-    max-width: 100%;
-  }
-
-  .scroll-content {
-    padding: 0 !important;
+  ion-label {
+    margin: 0 !important;
   }
 
   ion-avatar img {
@@ -35,16 +13,94 @@ page-modal-detail-product {
     overflow: hidden;
     width: 40px;
     height: 40px;
-}
+  }
+
+  ion-footer {
+
+    .button,
+    .button.activated {
+      display: block;
+      margin: 10px auto;
+      width: 90%;
+      background: #CE90E6;
+      border: 0;
+      border-radius: 26px !important;
+      color: #FFFFFF;
+    }
+  }
+
+  .item {
+    .slides {
+      box-shadow: none;
+
+      .swiper-pagination {
+        bottom: 0;
+      }
+    }
+
+    .like__button {
+      position: absolute;
+      margin: 12px 12px 12px 85%;
+      background: transparent;
+      font-size: 0;
+      box-shadow: none;
+      z-index: 2;
+
+      .icon {
+        width: 28px;
+        height: 28px;
+        background: url('../../assets/icon/products/like.svg') center no-repeat;
+        background-size: 100%;
+        font-size: 0;
+        transition: all .2s ease;
+
+        &.hover {
+          background: url('../../assets/icon/products/like_hover.svg') center no-repeat;
+          background-size: 100%;
+        }
+      }
+    }
+
+    .title-product {
+      margin: 20px 0 10px;
+      padding: 10px 20px;
+      background: #CE90E6;
+      color: #FFF;
+      font-size: 16px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-info-user {
+      margin-bottom: 10px;
+      border-top: 1px #ccc solid;
+      border-bottom: 1px #ccc solid !important;
+
+      ion-avatar {
+        padding-left: 12px;
+      }
+    }
+
+    .description-product {
+      padding: 10px;
+    }
+  }
+
+  .swiper-slide img {
+    max-width: 100%;
+  }
+
+  .scroll-content {
+    padding: 0 !important;
+  }
 
   .item-inner {
     padding-right: 0 !important;
-  }
-  ion-item {
-    padding-left: 0 !important;
   }
 
   .label-md {
     margin: 0;
   }
+
+
 }

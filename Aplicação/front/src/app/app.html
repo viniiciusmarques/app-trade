@@ -6,22 +6,35 @@
   </ion-header>
   <ion-content>
     <ion-list>
-      <button ion-item (click)="openPage(homePage)">
+      <button ion-item menuClose (click)="pushPage('HomePage')">
         Home
       </button>
-      <button ion-item (click)="openPage(friendsPage)">
-        Friends
+      <button ion-item menuClose (click)="pushPage('MyProductsEditPage')">
+        Produtos
       </button>
-      <button ion-item (click)="openPage(eventsPage)">
-        Events
+      <button ion-item menuClose (click)="pushPage('OffersPage')">
+        Ofertas
       </button>
-      <button ion-item (click)="closeMenu()">
-        Close Menu
+      <button ion-item menuClose (click)="pushPage('ChatPage')">
+        Chat
       </button>
-      <button ion-item (click)="logout()">
-        Sair
+      <button ion-item menuClose (click)="pushPage('MyMenuPage')">
+        Cadastros
+      </button>
+      <button ion-item menuClose (click)="pushPage('RelatoriosPage')">
+        Relatórios
+      </button>
+      <button ion-item menuClose (click)="pushPage('RelatoriosPage')">
+        Configurações
       </button>
     </ion-list>
+    <ion-footer>
+      <ion-toolbar>
+        <button ion-item menuClose (click)="logout()">
+          Sair
+        </button>
+      </ion-toolbar>
+    </ion-footer>
   </ion-content>
 </ion-menu>
 

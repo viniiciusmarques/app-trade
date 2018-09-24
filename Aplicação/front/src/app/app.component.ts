@@ -48,6 +48,10 @@ export class MyApp {
     });
   }
 
+  pushPage(page:string) {
+    this.nav.push(page, null, { animate: false, duration: 0, direction:'forward' });
+  }
+
   logout() {
     localStorage.removeItem('user');
     this.menu.close();

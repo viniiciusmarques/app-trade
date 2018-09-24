@@ -1,6 +1,8 @@
 page-product {
-  .filter {
-    align-items: center;
-    display: flex;
+  ion-content {
+    .scroll-content {
+      padding-top: 0 !important;
+      background: #f2f2f2;
+    }
   }
 }
