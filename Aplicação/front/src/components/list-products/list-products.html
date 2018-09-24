@@ -1,12 +1,10 @@
-<ion-grid>
-  <ion-row text-center>
     <ion-card class="animated flipInY" *ngFor="let product of products">
       <ion-item>
         <ion-avatar item-start>
-          <img src="img/marty-avatar.png">
+          <img src="http://localhost:8080/storage/users/{{product?.tb_user.image}}">
         </ion-avatar>
-        <h2>Marty McFly</h2>
-        <p>November 5, 1955</p>
+        <h2>{{product?.tb_user.userName}}</h2>
+        <p *ngIf="product?.tb_user.address">{{ product?.tb_user.address.city }}, {{ product?.tb_user.address.state}} </p>
       </ion-item>
       <div class="img-product">
         <img src="http://localhost:8080/storage/images/{{product?.images[0]?.hash_name}}" />
@@ -22,5 +20,3 @@
         </button>
       </ion-card-content>
     </ion-card>
-  </ion-row>
-</ion-grid>

@@ -14,11 +14,10 @@ export class ListProductsComponent {
     private navCtrl: NavController,
     private productProvider: ProductProvider,
     private toastCtrl: ToastController
-  ) {
-    console.log(this.products);
-  }
+  ) {}
 
   openDetail(product) {
+    console.log(this.products)
     this.navCtrl.push('ModalDetailProductPage', { product:product });
   }
 
