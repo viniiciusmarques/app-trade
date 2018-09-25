@@ -1,32 +1,52 @@
 page-info-offer {
-  .mini__product {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    .product {
-      margin-right: 7px;
-      img {
-        height: 110px;
-        width: 120px;
+  height: 100vh !important;
+
+  .scroll-content {
+    background: #f1f1f1;
+
+    .mini__product {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      .product {
+        margin-right: 7px;
+
+        img {
+          height: auto;
+          max-width: 120px;
+          width: 100%;
+          padding: 0;
+        }
       }
     }
-  }
 
-  ion-card {
-    border-radius: 10px !important;
-    img {
-      border-radius: 10px;
+    ion-card {
+      border-radius: 10px !important;
+
+      img {
+        border-radius: 10px;
+        padding: 30px;
+      }
     }
-  }
 
-  button {
-    border-radius: 26px !important;
-  }
+    button {
+      border-radius: 26px !important;
+    }
 
-  p {
-    margin-bottom: 5px;
-  }
-  .text__aux {
-    color: #777777;
+    .header-info {
+      padding: 7px 0;
+      background: #8845C6;
+      color: #FFFFFF;
+      border-radius: 5px;
+    }
+
+    p {
+      margin-bottom: 5px;
+    }
+
+    .text__aux {
+      color: #777777;
+    }
   }
 }

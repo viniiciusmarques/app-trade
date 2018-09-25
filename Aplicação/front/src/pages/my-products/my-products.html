@@ -9,7 +9,7 @@
     <ion-row *ngFor="let product of products">
       <ion-col>
         <ion-card (click)="selectProduct($event)" id={{product.id}}>
-          <img src="http://localhost:8080/storage/images/{{product.images[0]?.hash_name}}"/>
+          <img src="http://localhost:8080/storage/images/{{product.images[0]?.hash_name}}" />
           <ion-card-content>
             {{ product.name }}
           </ion-card-content>
@@ -17,7 +17,9 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-  <ion-fab bottom class="animated slideInUp">
-    <button [disabled]="selectedProducts.length == 0" ion-fab color="purple" (click)="sendOffer()">Finalizar Oferta</button>
-  </ion-fab>
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <button [disabled]="selectedProducts.length == 0" ion-button round outline color="purple" (click)="sendOffer()">Finalizar Oferta</button>
+  </ion-toolbar>
+</ion-footer>

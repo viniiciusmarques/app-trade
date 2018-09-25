@@ -1,20 +1,50 @@
 page-offers {
   .icon-segment {
     font-size: 1.5rem !important;
+
     &::before {
       margin-right: 5px;
     }
   }
 
   ion-segment {
-    margin-top: -13px;
+    width: 100% !important;
+    margin: 0 !important;
+    ;
+
+    .segment-button {
+      padding: 5px !important;
+      height: auto !important;
+
+      .icon-segment {
+        font-family: 'Raleway', sans-serif !important;
+        font-weight: 500;
+
+        &:before {
+          display: none;
+        }
+      }
+    }
+  }
+
+  img {
+    border-radius: 8px;
   }
 
   ion-label {
     margin: 0px 8px 13px 0 !important;
   }
 
-  img {
-    border-radius: 8px;
+  .list {
+    margin: 10px 0;
+
+    .item {
+      padding: 15px 10px;
+      border-bottom: 1px #CCCCCC solid !important;
+
+      .item-inner {
+        border: 0;
+      }
+    }
   }
 }

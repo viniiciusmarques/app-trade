@@ -30,8 +30,8 @@
           <img src="http://localhost:8080/storage/images/{{product.offer_product.images[0].hash_name}}">
         </ion-thumbnail>
         <h2>{{send?.offer_last.username}}</h2>
-        <p style="margin-top: 10px">Status: {{send?.status | titlecase}}</p>
-        <p style="font-size: 10px">{{send?.createdAt |  date: 'dd/MM/yyyy H:m:ss' }}</p>
+        <p style="margin-top: 10px; font-size: 14px">Status: {{send?.status | titlecase}}</p>
+        <p style="font-size: 12px">{{send?.createdAt |  date: 'dd/MM/yyyy H:m:ss' }}</p>
       </ion-item>
     </ion-list>
 
@@ -41,8 +41,8 @@
           <img src="http://localhost:8080/storage/images/{{product.offer_product.images[0].hash_name}}">
         </ion-thumbnail>
         <h2>{{recive?.offer_first.username}}</h2>
-        <p style="margin-top: 10px">Status: {{recive?.status | titlecase}}</p>
-        <p style="font-size: 10px">{{recive?.createdAt |  date: 'dd/MM/yyyy H:m:ss' }}</p>
+        <p style="margin-top: 10px; font-size: 14px">Status: {{recive?.status | titlecase}}</p>
+        <p style="font-size: 12px">{{recive?.createdAt |  date: 'dd/MM/yyyy H:m:ss' }}</p>
       </ion-item>
     </ion-list>
   </div>

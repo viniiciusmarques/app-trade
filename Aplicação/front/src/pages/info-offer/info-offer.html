@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>infoOffer</ion-title>
+    <ion-title style="font-size: 10px;">Inf. da Oferta</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -24,10 +24,9 @@
     </div>
     <div text-center class="animated fadeInUpBig">
       <hr>
-      <h5>
+      <h5 class="header-info">
         <ion-icon name="ios-information-circle-outline"></ion-icon> Informações da troca
       </h5>
-      <hr>
       <p>Quem começou a negociação </p>
       <span class="text__aux" *ngIf="offer.start">{{offer?.start.offer_first.username}}</span>
       <span class="text__aux" *ngIf="!offer.start">{{offer.offer_first.username}}</span>
