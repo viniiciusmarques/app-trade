@@ -1,27 +1,43 @@
 page-messages {
-  .user_name {
-        color: #afafaf;
-    }
-    .message {
-        padding: 10px !important;
-        transition: all 250ms ease-in-out !important;
-        border-radius: 10px !important;
-        margin-bottom: 4px !important;
-    }
-    .my_message {
-        background: color($colors, primary) !important;
-        color: #000 !important;
-    }
-    .other_message {
-        background: #dcdcdc !important;
-        color: #000 !important;
-    }
+
+
+  .message {
+    padding: 10px !important;
+    transition: all 250ms ease-in-out !important;
+    border-radius: 10px !important;
+    margin-bottom: 7px !important;
+  }
+
+  .my_message {
+    background: #8845C6 !important;
+    color: #FFFFFF !important;
+
+    .user_name,
     .time {
-        color: #afafaf;
-        float: right;
-        font-size: small;
+      color: #6FCF97;
     }
-    .message_row {
-        background-color: #fff;
+  }
+
+  .other_message {
+    background: #6FCF97 !important;
+    color: #000 !important;
+
+    .user_name,
+    .time {
+      color: #7b1cd4;
     }
+  }
+
+  .time {
+    float: right;
+    font-size: small;
+  }
+
+  .message_row {
+    background-color: #fff;
+  }
+
+  .button-inner {
+    color: #7b1cd4;
+  }
 }

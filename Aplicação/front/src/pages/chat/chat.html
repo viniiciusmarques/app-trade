@@ -13,8 +13,8 @@
       <ion-avatar item-start>
         <img src="http://localhost:8080/storage/users/{{chat.send.image}}">
       </ion-avatar>
-      <h2>{{ chat.send.name | titlecase }}</h2>
-      <p *ngIf="chat.messages.length > 0">{{ chat.messages[0].message | sliceString }}</p>
+      <h2 style="color: #FFFFFF;">{{ chat.send.name | titlecase }}</h2>
+      <p *ngIf="chat.messages.length > 0" style="color: #CECECE;">{{ chat.messages[0].message | sliceString }}</p>
       <p *ngIf="chat.messages.length <= 0">Não há mensages</p>
     </ion-item>
   </ion-list>
