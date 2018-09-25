@@ -56,10 +56,17 @@ $tradeLigth: #CE90E6;
 }
 
 .menu-inner {
+  .content {
+    background: #CE90E6;
+  }
+
   .list {
+    border: 0;
+
     .item {
       padding: 10px 0;
-      border-bottom: 1px solid #CE90E6;
+      background: #CE90E6;
+      border: 0;
 
       .item-inner {
         background: none;
@@ -68,8 +75,28 @@ $tradeLigth: #CE90E6;
 
       .label {
         padding-left: 15px;
-        color: #8845C6;
+        color: #FFF;
+        text-align: center;
       }
+    }
+  }
+
+  .footer {
+    background: #6FCF97;
+
+    .toolbar-background {
+      background: #6FCF97;
+    }
+
+    .item,
+    .item-inner {
+      background-image: none !important;
+      border: 0;
+      text-align: center;
+      color: #FFF;
+      background: #6FCF97;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
   }
 }
